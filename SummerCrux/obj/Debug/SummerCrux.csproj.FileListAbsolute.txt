@@ -1,0 +1,5 @@
+F:\MY OWN\Projects\SummerCrux\SummerCrux\bin\SummerCrux.dll
+F:\MY OWN\Projects\SummerCrux\SummerCrux\bin\SummerCrux.pdb
+F:\MY OWN\Projects\SummerCrux\SummerCrux\obj\Debug\SummerCrux.csprojResolveAssemblyReference.cache
+F:\MY OWN\Projects\SummerCrux\SummerCrux\obj\Debug\SummerCrux.dll
+F:\MY OWN\Projects\SummerCrux\SummerCrux\obj\Debug\SummerCrux.pdb
