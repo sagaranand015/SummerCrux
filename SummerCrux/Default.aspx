@@ -848,7 +848,7 @@ The resources listed here will significantly reduce the amount of effort needed 
                         <a href="http://git-scm.com/" target="_blank">Here </a> is the official site of GIT. A very detailed documentation is given on this site.
                     </li>
                     <li>
-                        [Put the videos link here]
+                        <a href="http://www.lynda.com/Git-tutorials/Git-Essential-Training/100222-2.html?srchtrk=index:1%0Alinktypeid:2%0Aq:Git%0Apage:1%0As:relevance%0Asa:true%0Aproducttypeid:2" target="_blank">Here </a> is a very good course by Lynda. <a href="http://1drv.ms/1A622E3" target="_blank">Here </a> are the related videos.
                     </li>
                 </ol>
 
