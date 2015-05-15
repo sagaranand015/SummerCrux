@@ -1,0 +1,4 @@
+F:\MY OWN\Projects\SummerCrux\SummerCrux\bin\SummerCrux.dll
+F:\MY OWN\Projects\SummerCrux\SummerCrux\bin\SummerCrux.pdb
+F:\MY OWN\Projects\SummerCrux\SummerCrux\obj\Release\SummerCrux.dll
+F:\MY OWN\Projects\SummerCrux\SummerCrux\obj\Release\SummerCrux.pdb

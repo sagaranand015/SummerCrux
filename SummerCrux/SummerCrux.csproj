@@ -128,6 +128,8 @@
     <Content Include="font-awesome\scss\_spinning.scss" />
     <Content Include="font-awesome\scss\_stacked.scss" />
     <Content Include="font-awesome\scss\_variables.scss" />
+    <None Include="Properties\PublishProfiles\Crux - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\Crux - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
