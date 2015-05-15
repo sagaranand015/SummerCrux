@@ -593,7 +593,7 @@
                 <!-- write all the content here for each of the categories -->
                 <ol>
                     <li>
-                        <a href="https://www.hackerearth.com/notes/getting-started-with-the-sport-of-programming/" target="_blank">Here </a> is the detailed thread on HackerRank for competitive programming. One should start with this.
+                        <a href="https://www.hackerearth.com/notes/getting-started-with-the-sport-of-programming/" target="_blank">Here </a> is the detailed thread on HackerEarth for competitive programming. One should start with this.
                     </li>
                     <li>
                         For people looking for a headstart in Data Structures & Algorithms,<a href="https://www.coursera.org/course/algo" target="_blank"> Here </a> is the Part 1 of the coursera course by Tim Roughgarden. 
