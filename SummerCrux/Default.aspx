@@ -234,6 +234,7 @@
             var linuxDiv = $('#linuxDiv').hide();
             var git = $('#gitDiv').hide();
             var openDiv = $('#openDiv').hide();
+            var networkDiv = $('#networkDiv').hide();
 
             // for redirection links
             $('.redirectGIT').on('click', function () {
@@ -455,6 +456,29 @@
                 return false;
             });
 
+            // for Open Source Div
+            $('.net').on('click', function () {
+                if (!$(this).hasClass('active')) {
+                    changeActiveState(this);
+                    showDiv(networkDiv);
+                }
+
+                // this is for conditions of scrolling depending on the device size.
+                if ($(window).width() >= 1200) {
+                }
+                else if ($(window).width() >= 992) {
+                }
+                else if ($(window).width() >= 768) {
+                }
+                else if ($(window).width() >= 480) {
+                    $('#hiddenNet').trigger('click');
+                }
+                else {
+                    $('#hiddenNet').trigger('click');
+                }
+                return false;
+            });
+
             // for the first trigger to about Us.
             $('#about').trigger('click');
 
@@ -525,6 +549,7 @@
                     <a href="#" class="list-group-item open scrolly">Open Source</a>
                     <a href="#" class="list-group-item linux scrolly">Linux/OS/Server Admin</a>
                     <a href="#" class="list-group-item git scrolly">GIT VCS</a>
+                    <a href="#" class="list-group-item net scrolly">Computer Networks</a>
                 </div>
 
 		    </div>   <!-- end of list div on LHS -->
@@ -788,6 +813,18 @@ The resources listed here will significantly reduce the amount of effort needed 
                     <li>
                         <a href="http://1drv.ms/1A18TsZ" target="_blank" >Here </a> is a list of Video Tutorials by CBT Nuggets. You will learn from scratch (starting from installation) and can help you if you want to qualify Linux Administration Certifications. <a href="#" id="readMoreLinux">Read about Tut Arrangement</a>
                     </li>
+                    <li>
+                        <a href="http://linux.die.net/" target="_blank">Here </a> are the online man pages as well as decent guide too various commands and programming.
+                    </li>
+                    <li>
+                        <a href="2.	http://www.blindhog.net/" target="_blank">Here </a>is a site for For Linux and Networking related doubts
+                    </li>
+                    <li>
+                        For basics of Linux, Networks and OS, check <a href="http://www.laynetworks.com/" target="_blank">This</a> out.
+                    </li>
+                    <li>
+                        [Put link to PDFs here]
+                    </li>
                 </ol>
 
             </div>   <!-- end of Linux Dev Div -->
@@ -837,6 +874,59 @@ The resources listed here will significantly reduce the amount of effort needed 
                 </ol>
 
             </div>   <!-- end of Open Source Div -->
+
+            <!-- for the Networks Div -->
+            <a href="#networkDiv" class="scrolly" id="hiddenNet"></a>
+            <div class="col-lg-10 col-md-10 col-sm-9 divsMain network" id="networkDiv">
+                <h1 class="page-header">
+                    Computer Networks
+                </h1>
+
+                <ol>
+                    <li>
+                        <a href="https://www.coursera.org/course/comnetworks/" target="_blank" >Here </a> is the link to the Networks Course by the University of Washington - A Good course to start with.
+                    </li>
+                    <li>
+                        <a href="2.	https://www.coursera.org/course/bigdata/" target="_blank">Here </a> is another course. It will good insights on networks as well as search engine related basic concepts.
+                    </li>
+                    <li>
+                        Go and search basics in Wiki, every jargon U find in “Network and Sharing Center” in Windows and “Network Settings” in Linux.
+                    </li>
+                    <li>
+                        Try to experiment more on your Network. Go and play with your router.
+                    </li>
+                    <li>
+                        [Put link to PDFs]
+                    </li>
+                </ol>
+
+                <h1 class="page-header">
+                    Network Security
+                </h1>
+
+                <p class="text-muted">
+                    First learn the fundamentals of Networks and then search the terms like SQL injection, XSRF, XSS, Cookie Injection and Phishing. If you will know fundamentals, you can carry out attack as well as you will learn defense. There are n number of tools out there which will help you in doing these things.
+                </p>
+                <p class="text-muted">
+                    I would say, start from securing your own OS (Windows/Linux) and the go forward. People can trace you in couple of minutes if you are not aware of what is going on in Network.
+                </p>
+
+                <ol>
+                    <li>
+                        <a href="http://captf.com/practice-ctf/" target="_blank">Check </a> out this site. Its worth it!
+                    </li>
+                    <li>
+                        <a href="http://www.shodanhq.com/" target="_blank">Here </a> is the live attacks related info
+                    </li>
+                    <li>
+                        <a href="https://www.exploit-db.com/" target="_blank">Here </a> is some information on different types of exploits in networks
+                    </li>
+                    <li>
+                        Follow <a href="https://www.owasp.org/" target="_blank">this site </a> to have more insights in security and exploits
+                    </li>
+                </ol>
+
+            </div>   <!-- end of Networks Div -->
 
         </div>  <!-- end of main wrapper -->
 
