@@ -491,6 +491,18 @@
         });
     </script>
 
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-54949340-3', 'auto');
+        ga('send', 'pageview');
+    </script>
+
 </head>
 <body id="bodyTop">
     <form id="form1" runat="server">
@@ -581,7 +593,7 @@
                 <!-- write all the content here for each of the categories -->
                 <ol>
                     <li>
-                        <a href="https://www.hackerearth.com/notes/getting-started-with-the-sport-of-programming/" target="_blank">Here </a> is the detailed thread on HackerRank for competitive programming. One should start with this.
+                        <a href="https://www.hackerearth.com/notes/getting-started-with-the-sport-of-programming/" target="_blank">Here </a> is the detailed thread on HackerEarth for competitive programming. One should start with this.
                     </li>
                     <li>
                         For people looking for a headstart in Data Structures & Algorithms,<a href="https://www.coursera.org/course/algo" target="_blank"> Here </a> is the Part 1 of the coursera course by Tim Roughgarden. 
