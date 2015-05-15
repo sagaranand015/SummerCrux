@@ -26,6 +26,12 @@
 	<!-- for all the custom javascript functions -->
 	<script src="js/scripts.js"></script>
 
+    <!-- for the social buttons coming from Bootstrap -->
+    <link href="css/bootstrap-social.css" rel="stylesheet" />    
+
+    <!-- for the font-awesome thing -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
     <style type="text/css">
 
         @font-face {
@@ -118,6 +124,11 @@
         }
 
         /*this is for the styles applicable universally*/
+
+        /*.mainWrapper {
+            margin-bottom: %;
+        }*/
+
         h1, h2, h3, h4, h5, h6 {
             font-family: writingText;
         }
@@ -127,6 +138,74 @@
             font-size: 1.2em;
         }
 
+        li {
+            font-family: writingText;
+            font-size: 1.2em;
+        }
+
+        a {
+            font-family: writingText;
+            font-size: 1.2em;
+        }
+
+        .listHeading {
+             font-family: writingText;
+             font-size: 1.5em;
+             text-decoration: underline;
+             font-weight: bold;
+        }
+
+        div.list-group a {
+            font-size: 1.2em;
+        }
+
+        .quickLinks li {
+            display: block;
+            text-align: left;
+        }
+
+        .quickLinks li a {
+            font-size: 0.8em;
+        }
+
+        .footerDiv {
+            background: rgb(233, 233, 233);
+            padding: 2% 2% 1% 2%;
+            text-align: center;
+        }
+        ul.social-buttons {
+            margin-bottom: 0;
+        }
+
+        ul.social-buttons li a {
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+            font-size: 20px;
+            line-height: 40px;
+            outline: 0;
+            color: #fff;
+            background-color: #222;
+            -webkit-transition: all .3s;
+            -moz-transition: all .3s;
+            transition: all .3s;
+        }
+
+        .logoImg {
+            width: 40%;
+            height: 40%;
+        }
+
+        .divsMain {
+            margin-bottom: 3%;
+        }
+
+        /*ul.social-buttons li a:hover,
+        ul.social-buttons li a:focus,
+        ul.social-buttons li a:active {
+            background-color: #fed136;
+        }*/
     </style>
 
     <script type="text/javascript">
@@ -153,6 +232,7 @@
             var pythonDiv = $('#pythonDiv').hide();
             var haskellDiv = $('#haskellDiv').hide();
             var linuxDiv = $('#linuxDiv').hide();
+            var git = $('#gitDiv').hide();
             
             // for the triggering of the links on LHS.
             $('#about').on('click', function() {
@@ -322,6 +402,29 @@
                 return false;
             });
 
+            // for GIT VCS coding.
+            $('.git').on('click', function () {
+                if (!$(this).hasClass('active')) {
+                    changeActiveState(this);
+                    showDiv(gitDiv);
+                }
+
+                // this is for conditions of scrolling depending on the device size.
+                if ($(window).width() >= 1200) {
+                }
+                else if ($(window).width() >= 992) {
+                }
+                else if ($(window).width() >= 768) {
+                }
+                else if ($(window).width() >= 480) {
+                    $('#hiddenGit').trigger('click');
+                }
+                else {
+                    $('#hiddenGit').trigger('click');
+                }
+                return false;
+            });
+
             // for the first trigger to about Us.
             $('#about').trigger('click');
 
@@ -375,9 +478,16 @@
                     <a href="#" class="list-group-item web scrolly">Web Development</a>
 			        <a href="#" class="list-group-item android scrolly">Android App Development</a>
                     <a href="#" class="list-group-item windows scrolly">Windows Phone App Development</a>
+                </div>
+
+                <div class="list-group">
                     <a href="#" class="list-group-item python scrolly">Python Programming</a>
                     <a href="#" class="list-group-item haskell scrolly">Haskell Programming</a>
+                </div>
+
+                <div class="list-group">
                     <a href="#" class="list-group-item linux scrolly">Linux/OS/Server Admin</a>
+                    <a href="#" class="list-group-item git scrolly">GIT VCS</a>
                 </div>
 
 		    </div>   <!-- end of list div on LHS -->
@@ -402,50 +512,199 @@
              <!-- for the Competitive Div Div -->
             <a href="#compCodingDiv" class="scrolly" id="hiddenCoding"></a>
             <div class="col-lg-10 col-md-10 col-sm-9 divsMain codingDiv" id="compCodingDiv">
-
                 <h1 class="page-header">
                     Competitive Coding
                 </h1>
+
+                <!-- write all the content here for each of the categories -->
+                <ol>
+                    <li>
+                        <a href="https://www.hackerearth.com/notes/getting-started-with-the-sport-of-programming/" target="_blank">Here </a> is the detailed thread on HackerRank for competitive programming. One should start with this.
+                    </li>
+                    <li>
+                        For people looking for a headstart in Data Structures & Algorithms,<a href="https://www.coursera.org/course/algo" target="_blank"> Here </a> is the Part 1 of the coursera course by Tim Roughgarden. 
+                    </li>
+                    <li>
+                        <a href="http://1drv.ms/1KZlseB" target="_blank">Here</a> are the old videos from one of the course editions. You may get started with this.
+                    </li>
+
+                    <!-- add more content for Competitive programming here -->
+
+                </ol>
 
             </div>   <!-- end of Competitive Coding Div -->
 
             <!-- for the Web Dev Div -->
             <a href="#webDevDiv" class="scrolly" id="hiddenWeb"></a>
             <div class="col-lg-10 col-md-10 col-sm-9 divsMain webDiv" id="webDevDiv">
-
                 <h1 class="page-header">
                     Web Development
                 </h1>
+
+                <h4>
+                    Web can be categorised into 2 parts. Front-End and Back-End.
+                </h4>
+                <ul>
+                    <li>
+                       <span class="listHeading">Front End Development</span>
+                        <ol>
+                            <li>
+                                For starting with HTML, CSS, javascript/jQuery, one can take begineer courses on <a href="http://codeschool.com" target="_blank">CodeSchool.com, </a><a href="http://codeacademy.com" target="_blank">CodeAcademy.com, </a><a href="http://codebabes.com" target="_blank">Codebabes.com </a>(this last site is sort of fun :p)
+                            </li>
+                            <li>
+                                For learning basic to advanced jQuery, there is a course on “30 days to learn jQuery[Tuts+]”. You can find this on Torrents easily.
+                            </li>
+                            <li>
+                                For some little advanced jQuery, check this course: <a href="http://www.microsoftvirtualacademy.com/training-courses/introduction-to-jquery" target="_blank">Here</a>
+                            </li>
+                            <li>
+                                Here are some of the intro videos on HTML, CSS and javascript. These are very basic, and only for a pure beginner. <a href="http://1drv.ms/1EN8QGZ" target="_blank">Here</a>
+                            </li>
+                            <li>
+                                Again, For very basic exercises & presentations, check “Presentations” folder <a href="http://1drv.ms/1EN8QGZ" target="_blank">Here</a>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                       <span class="listHeading">Back End Development</span>
+                        <ol>
+                            <li>
+                                For backend development, you can start with either ASP.NET or PHP as your server side language. 
+                            </li>
+                            <li>
+                                For PHP, here are some of the uploaded videos:  <a href="http://1drv.ms/1EN8QGZ" target="_blank">Here</a>
+                            </li>
+                            <li>
+                                For ASP.NET, here is a small intro course: <a href="http://www.microsoftvirtualacademy.com/training-courses/introduction-to-asp-net-mvc" target="_blank">Here</a>
+                            </li>
+                            <li>
+                                There are also courses on Node.js, MongoDB, jQuery etc. <a href="http://www.microsoftvirtualacademy.com/"  target="_blank">Here</a>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <span class="listHeading">Miscellaneous</span>
+                        <ol>
+                            <li>
+                                If you want to develop websites using Python, have a look at <a href="https://www.udacity.com/course/web-development--cs253" target="_blank">This</a>, then followed by <a href="https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd004" target="_blank">This</a>
+                            </li>
+                        </ol>
+                    </li>
+                </ul>
 
             </div>   <!-- end of Web Dev Div -->
 
             <!-- for the Android App Dev Div -->
             <a href="#androidDiv" class="scrolly" id="hiddenAndroid"></a>
             <div class="col-lg-10 col-md-10 col-sm-9 divsMain androidDev" id="androidDiv">
-
                 <h1 class="page-header">
                     Android App Development
                 </h1>
+
+                <h4>To start with Android, following should be the approach:</h4>
+                <ol>
+                    <li>
+                        Requirements: <b>Android Studio</b> or <b>Eclipse</b>. (Android Studio is better than Eclipse, most of the current projects are developed using Android Studio)
+                    </li>
+                    <li>
+                        Official Training by Google: <a href="http://developer.android.com/training/index.html" target="_blank">Here</a>
+                    </li>
+                    <li>
+                        Learn Windows Azure(cloud) servies to use in Android Apps: <a href="https://channel9.msdn.com/Azure" target="_blank">Here</a> and <a href="http://azure.microsoft.com/en-us/documentation/services/mobile-services/" target="_blank">Here</a>
+                    </li>
+                    <li>
+                        Other useful resources: <a href="http://www.vogella.com/tutorials/android.html" target="_blank">Vogella</a>, <a href="http://www.tutorialspoint.com/android/" target="_blank">TutorialsPoint</a> and <a href="https://www.youtube.com/user/slidenerd" target="_blank">Youtube</a>
+                    </li>
+                </ol>
 
             </div>   <!-- end of Android Dev Div -->
 
             <!-- for the Windows App Dev Div -->
             <a href="#windowsDiv" class="scrolly" id="hiddenWindows"></a>
             <div class="col-lg-10 col-md-10 col-sm-9 divsMain androidDev" id="windowsDiv">
-
                 <h1 class="page-header">
                     Windows Phone/Store App Development
                 </h1>
+
+                <ol>
+                    <li>
+                        Check out this <a href="http://sagaranand015.blogspot.in/2013/10/opening-windows-first-step.html" target="_blank">Blog</a> for a complete list of resources for Windows Phone 7/8. [This is an old one, but you'll find lots of stuff on Windows Phone 8.1 from these links itself]
+                    </li>
+                    <li>
+                        <a href="http://channel9.msdn.com/Series/Windows-Phone-8-1-Development-for-Absolute-Beginners" target="_blank">Here </a> is the link to Windows Phone 8.1 For Absolute beginner series
+                    </li>
+                    <li>
+                        Check out <a href="http://www.microsoftvirtualacademy.com/" target="_blank">Microsoft Virtual Academy </a> for a very exhautive list of resources based on Microsoft Technologies.
+                    </li>
+                </ol>
 
             </div>   <!-- end of Windows Dev Div -->
 
             <!-- for the Python programming Div -->
             <a href="#pythonDiv" class="scrolly" id="hiddenPython"></a>
             <div class="col-lg-10 col-md-10 col-sm-9 divsMain pythonProg" id="pythonDiv">
-
                 <h1 class="page-header">
                     Python Programming
                 </h1>
+
+                <h4>
+                    Dividing the resources by level of difficulty, we go as:
+                </h4>
+
+                <ul>
+                    <li>  
+                        <b>Easy</b>
+                        <ol>
+                            <li>
+                                <a href="https://docs.python.org/2.7/" target="_blank">Python Official Docs</a>
+                            </li>
+                            <li>
+                                <a href="http://interactivepython.org/courselib/static/pythonds/index.html" target="_blank" >Hitchhiker’s Guide To Python</a>
+                            </li>
+                            <li>
+                                <a href="http://docs.python-guide.org/en/latest/#the-hitchhiker-s-guide-to-python" target="_blank" >Interactive Python</a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/playlist?list=PLQVvvaa0QuDe8XSftW-RAxdo6OmaeL85M" target="_blank">Video Tuts by Sentdex</a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/playlist?list=PL6gx4Cwl9DGAcbMi1sH6oAMk4JHw91mC_" target="_blank">Video Tuts by theNewBoston</a>
+                            </li>
+                            <li>
+                                <a href="http://www.codecademy.com/tracks/python" target="_blank">CoadeAcademy Video tutorials</a>
+                            </li>
+                            <li>
+                                <a href="https://www.udacity.com/course/programming-foundations-with-python--ud036" target="_blank">Online course on Udacity</a>
+                            </li>
+                            <li>
+                                <a href="https://www.udacity.com/course/intro-to-computer-science--cs101" target="_blank">Udacity Course using Python</a>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <b>Intermediate</b>
+                        <ol>
+                            <li>
+                                <a href="https://www.ebooks-it.net/ebook/the-python-standard-library-by-example" target="_blank">A Book on Standard Python Library</a>
+                            </li>
+                            <li>
+                                <a href="https://freepythontips.wordpress.com/2013/07/31/10-python-blogs-worth-following/" target="_blank">10 Best blogs on Python</a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/playlist?list=PL1A2CSdiySGIQZl3-v6o3iz-O5NO6roRl" target="_blank">DrapsTV Video Tutorials, Intermediate Python</a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/playlist?list=PL1A2CSdiySGJeOmhFfV7d2EeiiunIDRZZ" target="_blank">DrapsTV Video Tutorials, Intermediate Python</a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/karan/Projects" target="_blank">Mega Project list</a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/vinta/awesome-python" target="_blank">Awesome Python Project</a>
+                            </li>
+                        </ol>
+                    </li>
+                </ul>
 
             </div>   <!-- end of Python Dev Div -->
 
@@ -459,7 +718,7 @@
 
             </div>   <!-- end of Haskell Dev Div -->
 
-             <!-- for the Linux programming Div -->
+            <!-- for the Linux programming Div -->
             <a href="#linuxDiv" class="scrolly" id="hiddenLinux"></a>
             <div class="col-lg-10 col-md-10 col-sm-9 divsMain linuxOS" id="linuxDiv">
 
@@ -469,7 +728,49 @@
 
             </div>   <!-- end of Linux Dev Div -->
 
+            <!-- for the Linux programming Div -->
+            <a href="#gitDiv" class="scrolly" id="hiddenGit"></a>
+            <div class="col-lg-10 col-md-10 col-sm-9 divsMain gitVcs" id="gitDiv">
+
+                <h1 class="page-header">
+                    GIT - Version Control System
+                </h1>
+
+            </div>   <!-- end of Linux Dev Div -->
         </div>  <!-- end of main wrapper -->
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footerDiv">
+            <div class="col-lg-4 col-md-4">
+                <img src="img/cruxLogo.PNG" alt="Crux Logo" class="logoImg" />
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <ul class="quickLinks">
+                    <%--<li>
+                        <a href="#">Contact Us</a>
+                    </li>--%>
+                </ul>
+                <ul class="list-inline social-buttons">
+                    <li><a href="https://www.facebook.com/pages/CRUx-Programming-and-Computing-Club/166438876707986?fref=ts" target="_blank"><i class="fa fa-facebook"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <ul class="quickLinks">
+                   <li>
+                        <a href="http://universe.bits-pilani.ac.in/" target="_blank">BITS-Pilani, Pilani Campus</a>
+                    </li>
+                    <li>
+                        <a href="http://universe.bits-pilani.ac.in/Goa" target="_blank">BITS-Pilani, Goa Campus</a>
+                    </li>
+                    <li>
+                        <a href="http://universe.bits-pilani.ac.in/hyderabad" target="_blank">BITS-Pilani, Hyderabad Campus</a>
+                    </li>
+                     <li>
+                        <a href="http://universe.bits-pilani.ac.in/dubai" target="_blank">BITS-Pilani, Dubai Campus</a>
+                    </li>
+                </ul>        
+            </div>
+        </div>
 
     </form>
 
