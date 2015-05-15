@@ -233,7 +233,14 @@
             var haskellDiv = $('#haskellDiv').hide();
             var linuxDiv = $('#linuxDiv').hide();
             var git = $('#gitDiv').hide();
-            
+            var openDiv = $('#openDiv').hide();
+
+            // for redirection links
+            $('.redirectGIT').on('click', function () {
+                $('.git').trigger('click');
+                return false;
+            });
+
             // for the triggering of the links on LHS.
             $('#about').on('click', function() {
                 //changeActiveState(this);
@@ -425,6 +432,29 @@
                 return false;
             });
 
+            // for Open Source Div
+            $('.open').on('click', function () {
+                if (!$(this).hasClass('active')) {
+                    changeActiveState(this);
+                    showDiv(openDiv);
+                }
+
+                // this is for conditions of scrolling depending on the device size.
+                if ($(window).width() >= 1200) {
+                }
+                else if ($(window).width() >= 992) {
+                }
+                else if ($(window).width() >= 768) {
+                }
+                else if ($(window).width() >= 480) {
+                    $('#hiddenOpen').trigger('click');
+                }
+                else {
+                    $('#hiddenOpen').trigger('click');
+                }
+                return false;
+            });
+
             // for the first trigger to about Us.
             $('#about').trigger('click');
 
@@ -486,6 +516,7 @@
                 </div>
 
                 <div class="list-group">
+                    <a href="#" class="list-group-item open scrolly">Open Source</a>
                     <a href="#" class="list-group-item linux scrolly">Linux/OS/Server Admin</a>
                     <a href="#" class="list-group-item git scrolly">GIT VCS</a>
                 </div>
@@ -711,32 +742,96 @@
              <!-- for the Haskell programming Div -->
             <a href="#haskellDiv" class="scrolly" id="hiddenHaskell"></a>
             <div class="col-lg-10 col-md-10 col-sm-9 divsMain haskellProg" id="haskellDiv">
-
                 <h1 class="page-header">
                     Haskell Programming
                 </h1>
+
+                <p class="text-muted">
+                    Haskell is a functional programming language with a relatively steep learning curve and less resources compared to other languages.
+The resources listed here will significantly reduce the amount of effort needed to search for stuff.
+                </p>
+
+                <ol>
+                    <li>
+                        <a href="https://github.com/bitemyapp/learnhaskell" target="_blank">This Guide</a> will help you right from installing the required tools to courses to learn Haskell. 
+                    </li>
+                    <li>
+                        <a href="http://www.seas.upenn.edu/~cis194/spring13/index.html" target="_blank" >This course </a>is a great way to start learning Haskell.
+                    </li>
+                    <li>
+                        <a href="https://github.com/bfpg/cis194-yorgey-lectures" target="_blank">Here </a> are the video lectures for learning Haskell.
+                    </li>
+                    <li>
+                        <a href="http://book.realworldhaskell.org/read/" target="_blank">Here </a> is a book on Haskell Concepts
+                    </li>
+                    <li>
+                        <a href="http://learnyouahaskell.com/" target="_blank">Here </a> is another book for learning Haskell and functional Programming concepts
+                    </li>
+                </ol>
 
             </div>   <!-- end of Haskell Dev Div -->
 
             <!-- for the Linux programming Div -->
             <a href="#linuxDiv" class="scrolly" id="hiddenLinux"></a>
             <div class="col-lg-10 col-md-10 col-sm-9 divsMain linuxOS" id="linuxDiv">
-
                 <h1 class="page-header">
                     Linux/OS/Server Admin
                 </h1>
 
+                <ol>
+                    <li>
+                        <a href="http://1drv.ms/1A18TsZ" target="_blank" >Here </a> is a list of Video Tutorials by CBT Nuggets. You will learn from scratch (starting from installation) and can help you if you want to qualify Linux Administration Certifications.
+                    </li>
+                </ol>
+
             </div>   <!-- end of Linux Dev Div -->
 
-            <!-- for the Linux programming Div -->
+            <!-- for the GIT VCS Div -->
             <a href="#gitDiv" class="scrolly" id="hiddenGit"></a>
             <div class="col-lg-10 col-md-10 col-sm-9 divsMain gitVcs" id="gitDiv">
-
                 <h1 class="page-header">
                     GIT - Version Control System
                 </h1>
 
-            </div>   <!-- end of Linux Dev Div -->
+                <p class="text-muted">
+                    It is essential to learn about Version Control Systems when starting with Open source contribution. Git is one of the most popular VCS at the moment. Some resources for learning Git are:
+                </p>
+
+                <ol>
+                    <li>
+                        <a href="https://www.codeschool.com/courses/try-git" target="_blank">Here </a> is the CodeSchool course for starting with GIT.
+                    </li>
+                    <li>
+                        <a href="http://git-scm.com/" target="_blank">Here </a> is the official site of GIT. A very detailed documentation is given on this site.
+                    </li>
+                    <li>
+                        [Put the videos link here]
+                    </li>
+                </ol>
+
+            </div>   <!-- end of GIT VCS Div -->
+
+            <!-- for the Open Source Div -->
+            <a href="#openDiv" class="scrolly" id="hiddenOpen"></a>
+            <div class="col-lg-10 col-md-10 col-sm-9 divsMain openSource" id="openDiv">
+                <h1 class="page-header">
+                    Open Source Contribution
+                </h1>
+
+                <ol>
+                    <li>
+                        Some resources listed <a href="https://openhatch.org/" target="_blank">Here</a> will help you get a head start into the world of open source. This website is made for the soul purpose to train people to start open source contribution, made with increasing the participation of students in Google Summer of Code
+                    </li>
+                    <li>
+                        <a href="http://www.google-melange.com/gsoc/document/show/gsoc_program/google/gsoc2014/about_page" target="_blank">Here </a> is the official page for Google Summer of Code. Also, you can go through the projects accepted in the last edition of GSoc
+                    </li>
+                    <li>
+                        It is essential to learn about Version Control Systems when starting with Open source contribution. Please check the <a class="redirectGIT" href="#">GIT(VCS) </a> tab to discover resources for learning GIT
+                    </li>
+                </ol>
+
+            </div>   <!-- end of Open Source Div -->
+
         </div>  <!-- end of main wrapper -->
 
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footerDiv">
