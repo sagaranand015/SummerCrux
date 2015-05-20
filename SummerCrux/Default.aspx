@@ -581,6 +581,23 @@
                     This initiative is brought to you by Crux for helping the students, especially those who have spent their maiden year in College in learning the basics of various fields of Computer Science and related technologies, thus building a community of student developers.
                 </p>
 
+                <%--<p>
+                    Check out our Featured Content below for a quick start with the content
+                </p>--%>
+
+                <h2 class="page-header">
+                    Featured Content
+                </h2>
+
+                <ol>
+                    <li>
+                        <a href="content/PilaniPDF.pdf" target="_blank">A PDF</a> by students of Pilani Campus. [Inter-disciplinary]
+                    </li>
+                    <li>
+                        <a href="content/GoaPDF.pdf" target="_blank">A PDF</a> by students of Goa Campus.
+                    </li>
+                </ol>
+
             </div>   <!-- end of about Us Div -->
 
              <!-- for the Competitive Div Div -->
