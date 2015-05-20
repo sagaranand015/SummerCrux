@@ -223,6 +223,10 @@
             // for the scrolling of the page on  clicking of the links using Scrolling jQuery plugin.
             $('.scrolly').scrolly();
 
+            // for all the modals used on this page.
+            var notesModal = $('#notesModal').modal('hide');
+            var notesModalBody = $('#notesModalBody');
+
             // for all the variable to all the divs.
             var aboutUsDiv = $('#aboutUsDiv').hide();
             var compCodingDiv = $('#compCodingDiv').hide();
@@ -235,6 +239,7 @@
             var git = $('#gitDiv').hide();
             var openDiv = $('#openDiv').hide();
             var networkDiv = $('#networkDiv').hide();
+            var projectDiv = $('#projectDiv').hide();
 
             // for redirection links
             $('.redirectGIT').on('click', function () {
@@ -456,7 +461,7 @@
                 return false;
             });
 
-            // for Open Source Div
+            // for networks Div
             $('.net').on('click', function () {
                 if (!$(this).hasClass('active')) {
                     changeActiveState(this);
@@ -479,6 +484,29 @@
                 return false;
             });
 
+            // for Projects Div
+            $('.project').on('click', function () {
+                if (!$(this).hasClass('active')) {
+                    changeActiveState(this);
+                    showDiv(projectDiv);
+                }
+
+                // this is for conditions of scrolling depending on the device size.
+                if ($(window).width() >= 1200) {
+                }
+                else if ($(window).width() >= 992) {
+                }
+                else if ($(window).width() >= 768) {
+                }
+                else if ($(window).width() >= 480) {
+                    $('#hiddenProject').trigger('click');
+                }
+                else {
+                    $('#hiddenProject').trigger('click');
+                }
+                return false;
+            });
+
             // for the first trigger to about Us.
             $('#about').trigger('click');
 
@@ -488,7 +516,28 @@
                 return false;
             });
 
-        });
+            // for the notes modal.
+            $('#devNote').on('click', function () {
+                $('.modal').modal('hide');
+
+                // for adding content to the notes modal
+                $('#notesModalTitle').html("A note from the Developer of Crux.azurewebsites.net");
+                notesModalBody.html("<p>So, I made this website in just 3 hours time. I know this is a very simple one, but this is done with an intention. For people, who have a little knowledge of HTML, CSS, Bootstrap etc. can directly start with such a small website and gain some hands on experience.</p>");
+                notesModalBody.append("<p><a href='https://github.com/sagaranand015/SummerCrux' target='_blank'>Here </a>is the GIT Repo for this project.</p>");
+                notesModalBody.append("<p> A few points before you start with this project:</p>");
+                notesModalBody.append("<ol>");
+                notesModalBody.append("<li>This project is made on .NET with C# and MS-SQL Server at the back end. </li>");
+                notesModalBody.append("<li>You'll need Microsoft Visual Studio to build and run this project on your local machine.</li>");
+                notesModalBody.append("<li> At this point of time, there is no C# or Server-side interaction(s) involved. All the content put up on the website is static and hard coded into the HTML of this page.</li>");
+                notesModalBody.append("<li>You can start with going through the HTML, CSS and jQuery that is written for building this page. During this process, you'll learn the very basics of these three technologies and get comfortable with them.</li>");
+                notesModalBody.append("<li>  Please remember that you'll need to know Bootstrap. Please go through <code><a href='http://getbootstrap.com' target='_blank'>Bootstrap</a></code> and get comfortable with bootstrap.</li>");
+                notesModalBody.append("</ol>");
+
+                notesModal.modal('show');
+                return false;
+            });
+
+        });  // end of document ready function.
     </script>
 
     <script>
@@ -564,6 +613,10 @@
                     <a href="#" class="list-group-item net scrolly">Computer Networks</a>
                 </div>
 
+                <div class="list-group">
+                    <a href="#" class="list-group-item project scrolly">Projects</a>
+                </div>
+
 		    </div>   <!-- end of list div on LHS -->
 
             <!-- for the about Us Div -->
@@ -580,6 +633,23 @@
                 <p>
                     This initiative is brought to you by Crux for helping the students, especially those who have spent their maiden year in College in learning the basics of various fields of Computer Science and related technologies, thus building a community of student developers.
                 </p>
+
+                <%--<p>
+                    Check out our Featured Content below for a quick start with the content
+                </p>--%>
+
+                <h2 class="page-header">
+                    Featured Content
+                </h2>
+
+                <ol>
+                    <%--<li>
+                        <a href="content/PilaniPDF.pdf" target="_blank">A PDF</a> by students of Pilani Campus. [Inter-disciplinary]
+                    </li>--%>
+                    <li>
+                        <a href="https://sites.google.com/a/goa.bits-pilani.ac.in/what-do-i-do-after-my-first-year/" target="_blank">A Document</a> by students of Goa Campus. [Only accessible through BITSmail]
+                    </li>
+                </ol>
 
             </div>   <!-- end of about Us Div -->
 
@@ -940,6 +1010,21 @@ The resources listed here will significantly reduce the amount of effort needed 
 
             </div>   <!-- end of Networks Div -->
 
+             <!-- for the Projects Div -->
+            <a href="#projectDiv" class="scrolly" id="hiddenProject"></a>
+            <div class="col-lg-10 col-md-10 col-sm-9 divsMain proj" id="projectDiv">
+                <h1 class="page-header">
+                    Projects
+                </h1>
+
+                <ol>
+                    <li>
+                        .NET based project for this website (crux.azurewebsites.net). <a href="https://github.com/sagaranand015/SummerCrux" target="_blank">Here</a> is the GIT Repo for this website. <a href="#" id="devNote">Here </a> are the notes on this website project.
+                    </li>
+                </ol>
+
+            </div>   <!-- end of projects Div -->
+
         </div>  <!-- end of main wrapper -->
 
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footerDiv">
@@ -1001,6 +1086,26 @@ The resources listed here will significantly reduce the amount of effort needed 
                         <br />
                     </li>
                 </ol>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- this is for the notes modal. -->
+        <div class="modal fade" id="notesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" oncontextmenu="return false">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="notesModalTitle">A note on developing such a website</h4>
+              </div>
+              <div class="modal-body" id="notesModalBody" style="font-family: writingText; font-size:1.2em;">
+
+                    <!-- data will come from jQuery here -->
+
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
